@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Compaction Selector",
+    "description": "Choose the compaction model and additional on-demand passes. Auto follows the conversation model."
+  }
+}
