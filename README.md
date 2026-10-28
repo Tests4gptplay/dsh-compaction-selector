@@ -4,8 +4,6 @@
 
 [English](README.en.md)
 
-**Support / 赞助：** [GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [Patreon](https://www.patreon.com/cw/Kou848) · [爱发电 / Afdian](https://afdian.com/a/kkt_ifd1) · [支付宝 / Alipay](SPONSOR.md)
-
 ## 功能
 
 - **独立选择压缩模型**：从 DSH 已配置的模型目录中按供应商浏览、搜索和选择。
@@ -57,3 +55,7 @@ Host 服务保存模型选择与次数；压缩引擎继承 DSH 的 `BasicCompac
 ## 许可
 
 [MIT](LICENSE)
+
+## 支持项目 / Support
+
+[GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [Patreon](https://www.patreon.com/cw/Kou848) · [爱发电 / Afdian](https://afdian.com/a/kkt_ifd1) · [支付宝 / Alipay](SPONSOR.md)
