@@ -4,8 +4,6 @@
 
 Adds **Settings → Compaction model selection** to DeepSeek Harness, with an independent summarization model and configurable additional on-demand compaction passes for Standard mode.
 
-**Support / 赞助：** [GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [Patreon](https://www.patreon.com/cw/Kou848) · [爱发电 / Afdian](https://afdian.com/a/kkt_ifd1) · [支付宝 / Alipay](SPONSOR.md)
-
 ## Features
 
 - Browse and search the models configured in DSH, grouped by provider.
@@ -47,3 +45,7 @@ A Host service provides live preferences to a subclass of the official `BasicCom
 The bundle declares the Standard preset and substitutes its basic compaction engine. JavaScript runtime files are shipped directly, with no installation build step. DSH supplies the official Host dependencies.
 
 [Changelog](CHANGELOG.md) · [Issues](https://github.com/Tests4gptplay/dsh-compaction-selector/issues) · [MIT license](LICENSE)
+
+## 支持项目 / Support
+
+[GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [Patreon](https://www.patreon.com/cw/Kou848) · [爱发电 / Afdian](https://afdian.com/a/kkt_ifd1) · [支付宝 / Alipay](SPONSOR.md)
