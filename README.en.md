@@ -1,20 +1,24 @@
-> Test candidate: install the exact archive in [test-artifacts](test-artifacts/), not the older release links below. Windows native acceptance is pending.
-
 # Compaction Selector
+
+## Summary model and compaction passes
+
+Choose an independent summary model or Auto to follow the conversation route. Configure extra passes for automatic pressure compaction; manual `/compact` attempts one useful compaction. Auto prefers the latest request route and falls back to the Agent model through the official engine.
 
 [中文说明](README.md)
 
-Adds **Settings → Compaction model selection** to DeepSeek Harness, with an independent summarization model and configurable additional on-demand compaction passes for Standard mode.
+Adds **Settings → Compaction model selection** to DeepSeek Harness, with an independent summarization model and configurable additional automatic pressure-compaction passes for Standard mode.
 
 ## Features
 
 - Browse and search the models configured in DSH, grouped by provider.
 - **Auto**, at the top of the picker, follows the current conversation model route.
-- Additional compaction passes default to **1**. Set **0** for the initial pass only.
+- Additional automatic pressure-compaction passes default to **1**. Values **0 / 1 / 3** allow at most **1 / 2 / 4** passes per automatic trigger, continuing only while above the threshold and a useful range remains. Manual `/compact` attempts one useful compaction and does not repeat according to this setting.
 - Settings are saved through DSH and read by the next compaction.
 - Chinese and English UI, theme-aware styling, keyboard selection and stepper controls.
 
 ## Install
+
+For test candidate **1.0.4-uiqa.20261029.2**, use the pinned package in `test-artifacts/README.md`; older tags below are historical releases.
 
 Target environment: **DeepSeek Harness 0.2.1-rc.3**, Standard mode and its official basic compaction engine.
 

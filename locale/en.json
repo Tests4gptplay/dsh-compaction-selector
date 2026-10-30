@@ -1,6 +1,6 @@
 {
   "meta": {
     "title": "Compaction Selector",
-    "description": "Choose the compaction model and additional on-demand passes. Auto follows the conversation model."
+    "description": "Choose the summary model and extra automatic pressure-compaction passes; Auto follows the conversation route, while manual compaction attempts one pass."
   }
 }
