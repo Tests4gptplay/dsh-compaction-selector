@@ -75,3 +75,6 @@ Host 服务保存模型选择与次数；压缩引擎继承 DSH 的 `BasicCompac
 
 
 Windows手动压缩及续聊已采用有效报告；自然压力自动摘要列入实机验证要求，见[验收](docs/testing/ACCEPTANCE.md)。
+
+
+[查验具体用例、实际结果与公开净化证据](docs/testing/EVIDENCE.md)。

@@ -1,0 +1,724 @@
+{
+  "environment": "Linux official DSH Host with synthetic model; Windows same-runtime evidence adopted separately",
+  "packageSha256": "a88d493183f0c66b4d801cf3c0f04978125ebb7102088a9b47ab52c44b403850",
+  "pressureCases": [
+    {
+      "caseId": "native-pressure-0",
+      "additionalPasses": 0,
+      "expectedTotalPasses": 1,
+      "startCalls": 1,
+      "finishCalls": 1,
+      "errorCalls": 0,
+      "cycles": [
+        {
+          "startSeq": 28,
+          "summarySeq": 29,
+          "replacementSeq": 30,
+          "endSeq": 31,
+          "paired": true
+        }
+      ],
+      "turnCompletedAfterCompaction": true,
+      "result": "pass"
+    },
+    {
+      "caseId": "native-pressure-1",
+      "additionalPasses": 1,
+      "expectedTotalPasses": 2,
+      "startCalls": 2,
+      "finishCalls": 2,
+      "errorCalls": 0,
+      "cycles": [
+        {
+          "startSeq": 28,
+          "summarySeq": 29,
+          "replacementSeq": 30,
+          "endSeq": 31,
+          "paired": true
+        },
+        {
+          "startSeq": 32,
+          "summarySeq": 33,
+          "replacementSeq": 34,
+          "endSeq": 35,
+          "paired": true
+        }
+      ],
+      "turnCompletedAfterCompaction": true,
+      "result": "pass"
+    },
+    {
+      "caseId": "native-pressure-3",
+      "additionalPasses": 3,
+      "expectedTotalPasses": 4,
+      "startCalls": 4,
+      "finishCalls": 4,
+      "errorCalls": 0,
+      "cycles": [
+        {
+          "startSeq": 28,
+          "summarySeq": 29,
+          "replacementSeq": 30,
+          "endSeq": 31,
+          "paired": true
+        },
+        {
+          "startSeq": 32,
+          "summarySeq": 33,
+          "replacementSeq": 34,
+          "endSeq": 35,
+          "paired": true
+        },
+        {
+          "startSeq": 36,
+          "summarySeq": 37,
+          "replacementSeq": 38,
+          "endSeq": 39,
+          "paired": true
+        },
+        {
+          "startSeq": 40,
+          "summarySeq": 41,
+          "replacementSeq": 42,
+          "endSeq": 43,
+          "paired": true
+        }
+      ],
+      "turnCompletedAfterCompaction": true,
+      "result": "pass"
+    }
+  ],
+  "manualAndFailureCalls": [
+    {
+      "caseId": "manual-explicit-round02",
+      "call": 1,
+      "at": "2026-10-29T09:15:16.544Z",
+      "fixturePhases": [
+        "start",
+        "finish"
+      ],
+      "aborted": false,
+      "transaction": [
+        {
+          "seq": 21,
+          "type": "compaction/start",
+          "reason": null,
+          "at": "2026-10-29T09:15:16.530Z"
+        },
+        {
+          "seq": 22,
+          "type": "compaction/summary",
+          "reason": null,
+          "at": "2026-10-29T09:15:16.549Z"
+        },
+        {
+          "seq": 23,
+          "type": "user/message",
+          "reason": null,
+          "at": "2026-10-29T09:15:16.551Z"
+        },
+        {
+          "seq": 24,
+          "type": "compaction/end",
+          "reason": null,
+          "at": "2026-10-29T09:15:16.551Z"
+        }
+      ],
+      "summaryCommitted": true,
+      "transactionClosed": true,
+      "nextTurnEnd": {
+        "seq": 35,
+        "reason": "completed",
+        "at": "2026-10-29T09:15:54.985Z"
+      }
+    },
+    {
+      "caseId": "manual-auto-round02",
+      "call": 1,
+      "at": "2026-10-29T09:16:24.155Z",
+      "fixturePhases": [
+        "start",
+        "finish"
+      ],
+      "aborted": false,
+      "transaction": [
+        {
+          "seq": 37,
+          "type": "compaction/start",
+          "reason": null,
+          "at": "2026-10-29T09:16:24.131Z"
+        },
+        {
+          "seq": 38,
+          "type": "compaction/summary",
+          "reason": null,
+          "at": "2026-10-29T09:16:24.159Z"
+        },
+        {
+          "seq": 39,
+          "type": "user/message",
+          "reason": null,
+          "at": "2026-10-29T09:16:24.161Z"
+        },
+        {
+          "seq": 40,
+          "type": "compaction/end",
+          "reason": null,
+          "at": "2026-10-29T09:16:24.161Z"
+        }
+      ],
+      "summaryCommitted": true,
+      "transactionClosed": true,
+      "nextTurnEnd": {
+        "seq": 51,
+        "reason": "completed",
+        "at": "2026-10-29T09:17:13.341Z"
+      }
+    },
+    {
+      "caseId": "native-error-recovery",
+      "call": 1,
+      "at": "2026-10-29T09:17:35.848Z",
+      "fixturePhases": [
+        "start",
+        "error"
+      ],
+      "aborted": false,
+      "transaction": [
+        {
+          "seq": 53,
+          "type": "compaction/start",
+          "reason": null,
+          "at": "2026-10-29T09:17:35.839Z"
+        },
+        {
+          "seq": 54,
+          "type": "compaction/end",
+          "reason": null,
+          "at": "2026-10-29T09:17:35.852Z"
+        }
+      ],
+      "summaryCommitted": false,
+      "transactionClosed": true,
+      "nextTurnEnd": null
+    },
+    {
+      "caseId": "native-error-recovery",
+      "call": 2,
+      "at": "2026-10-29T09:17:50.616Z",
+      "fixturePhases": [
+        "start",
+        "finish"
+      ],
+      "aborted": false,
+      "transaction": [
+        {
+          "seq": 57,
+          "type": "compaction/start",
+          "reason": null,
+          "at": "2026-10-29T09:17:50.608Z"
+        },
+        {
+          "seq": 58,
+          "type": "compaction/summary",
+          "reason": null,
+          "at": "2026-10-29T09:17:50.618Z"
+        },
+        {
+          "seq": 59,
+          "type": "user/message",
+          "reason": null,
+          "at": "2026-10-29T09:17:50.619Z"
+        },
+        {
+          "seq": 60,
+          "type": "compaction/end",
+          "reason": null,
+          "at": "2026-10-29T09:17:50.619Z"
+        }
+      ],
+      "summaryCommitted": true,
+      "transactionClosed": true,
+      "nextTurnEnd": null
+    },
+    {
+      "caseId": "native-pressure-3",
+      "call": 1,
+      "at": "2026-10-29T09:22:31.214Z",
+      "fixturePhases": [
+        "start",
+        "finish"
+      ],
+      "aborted": false,
+      "transaction": [
+        {
+          "seq": 28,
+          "type": "compaction/start",
+          "reason": null,
+          "at": "2026-10-29T09:22:31.157Z"
+        },
+        {
+          "seq": 29,
+          "type": "compaction/summary",
+          "reason": null,
+          "at": "2026-10-29T09:22:31.226Z"
+        },
+        {
+          "seq": 30,
+          "type": "user/message",
+          "reason": null,
+          "at": "2026-10-29T09:22:31.229Z"
+        },
+        {
+          "seq": 31,
+          "type": "compaction/end",
+          "reason": null,
+          "at": "2026-10-29T09:22:31.230Z"
+        }
+      ],
+      "summaryCommitted": true,
+      "transactionClosed": true,
+      "nextTurnEnd": {
+        "seq": 50,
+        "reason": "completed",
+        "at": "2026-10-29T09:22:33.488Z"
+      }
+    },
+    {
+      "caseId": "native-pressure-3",
+      "call": 2,
+      "at": "2026-10-29T09:22:31.284Z",
+      "fixturePhases": [
+        "start",
+        "finish"
+      ],
+      "aborted": false,
+      "transaction": [
+        {
+          "seq": 32,
+          "type": "compaction/start",
+          "reason": null,
+          "at": "2026-10-29T09:22:31.231Z"
+        },
+        {
+          "seq": 33,
+          "type": "compaction/summary",
+          "reason": null,
+          "at": "2026-10-29T09:22:31.305Z"
+        },
+        {
+          "seq": 34,
+          "type": "user/message",
+          "reason": null,
+          "at": "2026-10-29T09:22:31.310Z"
+        },
+        {
+          "seq": 35,
+          "type": "compaction/end",
+          "reason": null,
+          "at": "2026-10-29T09:22:31.312Z"
+        }
+      ],
+      "summaryCommitted": true,
+      "transactionClosed": true,
+      "nextTurnEnd": {
+        "seq": 50,
+        "reason": "completed",
+        "at": "2026-10-29T09:22:33.488Z"
+      }
+    },
+    {
+      "caseId": "native-pressure-3",
+      "call": 3,
+      "at": "2026-10-29T09:22:31.589Z",
+      "fixturePhases": [
+        "start",
+        "finish"
+      ],
+      "aborted": false,
+      "transaction": [
+        {
+          "seq": 36,
+          "type": "compaction/start",
+          "reason": null,
+          "at": "2026-10-29T09:22:31.316Z"
+        },
+        {
+          "seq": 37,
+          "type": "compaction/summary",
+          "reason": null,
+          "at": "2026-10-29T09:22:31.656Z"
+        },
+        {
+          "seq": 38,
+          "type": "user/message",
+          "reason": null,
+          "at": "2026-10-29T09:22:31.669Z"
+        },
+        {
+          "seq": 39,
+          "type": "compaction/end",
+          "reason": null,
+          "at": "2026-10-29T09:22:31.670Z"
+        }
+      ],
+      "summaryCommitted": true,
+      "transactionClosed": true,
+      "nextTurnEnd": {
+        "seq": 50,
+        "reason": "completed",
+        "at": "2026-10-29T09:22:33.488Z"
+      }
+    },
+    {
+      "caseId": "native-pressure-3",
+      "call": 4,
+      "at": "2026-10-29T09:22:31.908Z",
+      "fixturePhases": [
+        "start",
+        "finish"
+      ],
+      "aborted": false,
+      "transaction": [
+        {
+          "seq": 40,
+          "type": "compaction/start",
+          "reason": null,
+          "at": "2026-10-29T09:22:31.711Z"
+        },
+        {
+          "seq": 41,
+          "type": "compaction/summary",
+          "reason": null,
+          "at": "2026-10-29T09:22:32.172Z"
+        },
+        {
+          "seq": 42,
+          "type": "user/message",
+          "reason": null,
+          "at": "2026-10-29T09:22:32.175Z"
+        },
+        {
+          "seq": 43,
+          "type": "compaction/end",
+          "reason": null,
+          "at": "2026-10-29T09:22:32.176Z"
+        }
+      ],
+      "summaryCommitted": true,
+      "transactionClosed": true,
+      "nextTurnEnd": {
+        "seq": 50,
+        "reason": "completed",
+        "at": "2026-10-29T09:22:33.488Z"
+      }
+    },
+    {
+      "caseId": "native-pressure-0",
+      "call": 1,
+      "at": "2026-10-29T09:24:04.348Z",
+      "fixturePhases": [
+        "start",
+        "finish"
+      ],
+      "aborted": false,
+      "transaction": [
+        {
+          "seq": 28,
+          "type": "compaction/start",
+          "reason": null,
+          "at": "2026-10-29T09:24:04.341Z"
+        },
+        {
+          "seq": 29,
+          "type": "compaction/summary",
+          "reason": null,
+          "at": "2026-10-29T09:24:04.354Z"
+        },
+        {
+          "seq": 30,
+          "type": "user/message",
+          "reason": null,
+          "at": "2026-10-29T09:24:04.355Z"
+        },
+        {
+          "seq": 31,
+          "type": "compaction/end",
+          "reason": null,
+          "at": "2026-10-29T09:24:04.355Z"
+        }
+      ],
+      "summaryCommitted": true,
+      "transactionClosed": true,
+      "nextTurnEnd": {
+        "seq": 38,
+        "reason": "completed",
+        "at": "2026-10-29T09:24:05.609Z"
+      }
+    },
+    {
+      "caseId": "native-pressure-1",
+      "call": 1,
+      "at": "2026-10-29T09:29:22.181Z",
+      "fixturePhases": [
+        "start",
+        "finish"
+      ],
+      "aborted": false,
+      "transaction": [
+        {
+          "seq": 28,
+          "type": "compaction/start",
+          "reason": null,
+          "at": "2026-10-29T09:29:22.161Z"
+        },
+        {
+          "seq": 29,
+          "type": "compaction/summary",
+          "reason": null,
+          "at": "2026-10-29T09:29:22.197Z"
+        },
+        {
+          "seq": 30,
+          "type": "user/message",
+          "reason": null,
+          "at": "2026-10-29T09:29:22.199Z"
+        },
+        {
+          "seq": 31,
+          "type": "compaction/end",
+          "reason": null,
+          "at": "2026-10-29T09:29:22.200Z"
+        }
+      ],
+      "summaryCommitted": true,
+      "transactionClosed": true,
+      "nextTurnEnd": {
+        "seq": 42,
+        "reason": "completed",
+        "at": "2026-10-29T09:29:23.757Z"
+      }
+    },
+    {
+      "caseId": "native-pressure-1",
+      "call": 2,
+      "at": "2026-10-29T09:29:22.239Z",
+      "fixturePhases": [
+        "start",
+        "finish"
+      ],
+      "aborted": false,
+      "transaction": [
+        {
+          "seq": 32,
+          "type": "compaction/start",
+          "reason": null,
+          "at": "2026-10-29T09:29:22.201Z"
+        },
+        {
+          "seq": 33,
+          "type": "compaction/summary",
+          "reason": null,
+          "at": "2026-10-29T09:29:22.243Z"
+        },
+        {
+          "seq": 34,
+          "type": "user/message",
+          "reason": null,
+          "at": "2026-10-29T09:29:22.245Z"
+        },
+        {
+          "seq": 35,
+          "type": "compaction/end",
+          "reason": null,
+          "at": "2026-10-29T09:29:22.246Z"
+        }
+      ],
+      "summaryCommitted": true,
+      "transactionClosed": true,
+      "nextTurnEnd": {
+        "seq": 42,
+        "reason": "completed",
+        "at": "2026-10-29T09:29:23.757Z"
+      }
+    },
+    {
+      "caseId": "native-auto-cancel",
+      "call": 1,
+      "at": "2026-10-29T09:29:51.410Z",
+      "fixturePhases": [
+        "start",
+        "error"
+      ],
+      "aborted": true,
+      "transaction": [
+        {
+          "seq": 46,
+          "type": "compaction/start",
+          "reason": null,
+          "at": "2026-10-29T09:29:51.385Z"
+        },
+        {
+          "seq": 47,
+          "type": "compaction/end",
+          "reason": null,
+          "at": "2026-10-29T09:30:02.281Z"
+        }
+      ],
+      "summaryCommitted": false,
+      "transactionClosed": true,
+      "nextTurnEnd": {
+        "seq": 48,
+        "reason": "aborted",
+        "at": "2026-10-29T09:30:02.295Z"
+      }
+    },
+    {
+      "caseId": "native-auto-cancel-recovery",
+      "call": 1,
+      "at": "2026-10-29T09:30:25.827Z",
+      "fixturePhases": [
+        "start",
+        "finish"
+      ],
+      "aborted": false,
+      "transaction": [
+        {
+          "seq": 52,
+          "type": "compaction/start",
+          "reason": null,
+          "at": "2026-10-29T09:30:25.804Z"
+        },
+        {
+          "seq": 53,
+          "type": "compaction/summary",
+          "reason": null,
+          "at": "2026-10-29T09:30:25.835Z"
+        },
+        {
+          "seq": 54,
+          "type": "user/message",
+          "reason": null,
+          "at": "2026-10-29T09:30:25.836Z"
+        },
+        {
+          "seq": 55,
+          "type": "compaction/end",
+          "reason": null,
+          "at": "2026-10-29T09:30:25.836Z"
+        }
+      ],
+      "summaryCommitted": true,
+      "transactionClosed": true,
+      "nextTurnEnd": {
+        "seq": 61,
+        "reason": "completed",
+        "at": "2026-10-29T09:30:27.236Z"
+      }
+    }
+  ],
+  "cancel": {
+    "caseId": "native-auto-cancel",
+    "call": 1,
+    "at": "2026-10-29T09:29:51.410Z",
+    "fixturePhases": [
+      "start",
+      "error"
+    ],
+    "aborted": true,
+    "transaction": [
+      {
+        "seq": 46,
+        "type": "compaction/start",
+        "reason": null,
+        "at": "2026-10-29T09:29:51.385Z"
+      },
+      {
+        "seq": 47,
+        "type": "compaction/end",
+        "reason": null,
+        "at": "2026-10-29T09:30:02.281Z"
+      }
+    ],
+    "summaryCommitted": false,
+    "transactionClosed": true,
+    "nextTurnEnd": {
+      "seq": 48,
+      "reason": "aborted",
+      "at": "2026-10-29T09:30:02.295Z"
+    }
+  },
+  "recovery": {
+    "caseId": "native-auto-cancel-recovery",
+    "call": 1,
+    "at": "2026-10-29T09:30:25.827Z",
+    "fixturePhases": [
+      "start",
+      "finish"
+    ],
+    "aborted": false,
+    "transaction": [
+      {
+        "seq": 52,
+        "type": "compaction/start",
+        "reason": null,
+        "at": "2026-10-29T09:30:25.804Z"
+      },
+      {
+        "seq": 53,
+        "type": "compaction/summary",
+        "reason": null,
+        "at": "2026-10-29T09:30:25.835Z"
+      },
+      {
+        "seq": 54,
+        "type": "user/message",
+        "reason": null,
+        "at": "2026-10-29T09:30:25.836Z"
+      },
+      {
+        "seq": 55,
+        "type": "compaction/end",
+        "reason": null,
+        "at": "2026-10-29T09:30:25.836Z"
+      }
+    ],
+    "summaryCommitted": true,
+    "transactionClosed": true,
+    "nextTurnEnd": {
+      "seq": 61,
+      "reason": "completed",
+      "at": "2026-10-29T09:30:27.236Z"
+    }
+  },
+  "WindowsAdopted": {
+    "version": "1.0.4-uiqa.20261029.2",
+    "sameIndexEngineBytes": true,
+    "manualTransactionSequence": [
+      50,
+      51,
+      52,
+      53
+    ],
+    "manualCompactedMessages": 11,
+    "subsequentConversationAndSkill": true,
+    "freshModelCallsInDelta": 0,
+    "dependency": "Older local Native provider patch; not evidence of current Native candidate"
+  },
+  "provenance": [
+    {
+      "file": "native-pressure-backend-audit.json",
+      "sha256": "f9ce6134d5efd6b120fe6325935238659905f2b47c1a6b055db496a0e14271ad"
+    },
+    {
+      "file": "native-auto-cancel-backend-audit.json",
+      "sha256": "de99cea103a20d31c705407479d5dc529b307f6694e102d6c4d5a02547596a47"
+    },
+    {
+      "file": "native-transaction-backend-audit.json",
+      "sha256": "4229585f6207cb6791b4c7fe3a6eae753b7c5180801dce3d3b79714c0c8b20ee"
+    }
+  ],
+  "sourceCommit": "9f7ccfa565cb97da8341f5d5c6ba8c18778ba406",
+  "format": "Public sanitized evidence extract; not raw logs"
+}
