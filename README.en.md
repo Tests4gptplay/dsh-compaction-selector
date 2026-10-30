@@ -1,6 +1,6 @@
 # Compaction Selector
 
-> Candidate branch: [Install](test-artifacts/INSTALL.md) · [Acceptance](docs/testing/ACCEPTANCE.md) · [Changes](docs/testing/CHANGES.md) · [Index](docs/testing/README.md). Package identity is unchanged by this documentation update.
+> **1.0.4** · [Release notes](docs/releases/v1.0.4.md) · [Acceptance and scope](docs/testing/ACCEPTANCE.md).
 
 
 ## Summary model and compaction passes
@@ -21,23 +21,23 @@ Adds **Settings → Compaction model selection** to DeepSeek Harness, with an in
 
 ## Install
 
-For test candidate **1.0.4-uiqa.20261029.2**, use the pinned package in `test-artifacts/README.md`; older tags below are historical releases.
+Install release 1.0.4. Historical candidate packages/checksums are retained only as acceptance archives in `test-artifacts/README.md`.
 
 Target environment: **DeepSeek Harness 0.2.1-rc.3**, Standard mode and its official basic compaction engine.
 
 Open **Plugins → Add plugin**, paste the pinned source, then install and enable:
 
 ```text
-github:Tests4gptplay/dsh-compaction-selector#v1.0.3
+github:Tests4gptplay/dsh-compaction-selector#v1.0.4
 ```
 
 For the Web profile:
 
 ```sh
-dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.3'
+dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.4'
 ```
 
-A packaged `.tgz` is also available in the [release](https://github.com/Tests4gptplay/dsh-compaction-selector/releases/tag/v1.0.3). For a local installation, enter the `.tgz` path in Add plugin.
+A packaged `.tgz` is also available in the [release](https://github.com/Tests4gptplay/dsh-compaction-selector/releases/tag/v1.0.4). For a local installation, enter the `.tgz` path in Add plugin.
 
 ## Use
 
@@ -55,9 +55,9 @@ The bundle declares the Standard preset and substitutes its basic compaction eng
 
 [Changelog](CHANGELOG.md) · [Issues](https://github.com/Tests4gptplay/dsh-compaction-selector/issues) · [MIT license](LICENSE)
 
-## Local compatibility candidate (unpublished)
+## Compatibility and acceptance scope
 
-This source tree is a pinned QA candidate, not a published release. Install its exact local `.tgz` for validation; the public links above still identify the previous release.
+This release preserves the tested candidate runtime; version metadata, installation guidance and release notes are updated.
 
 The plugin UI and host integration use DSH-provided, OS-neutral APIs rather than OS paths or commands. Linux, Windows and macOS native behavior must each be validated on that OS; a Linux result does not certify Windows or macOS.
 

@@ -1,3 +1,5 @@
+> Release 1.0.4 preserves the tested candidate runtime. Candidate versions and checksums below identify historical evidence, not the formal release asset. See [release notes](../releases/v1.0.4.md).
+
 # 候选测试文档
 
 ## 增量交接原则

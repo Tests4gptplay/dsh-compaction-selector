@@ -1,6 +1,6 @@
 # 压缩选择器 · Compaction Selector
 
-> 候选分支：[安装](test-artifacts/INSTALL.md) · [验收](docs/testing/ACCEPTANCE.md) · [变更](docs/testing/CHANGES.md) · [索引](docs/testing/README.md)。此次文档整理不更换包身份。
+> **1.0.4** · [发行说明](docs/releases/v1.0.4.md) · [验收与范围](docs/testing/ACCEPTANCE.md)。
 
 
 ## 模型与压缩次数
@@ -21,23 +21,23 @@
 
 ## 安装
 
-本分支测试候选 **1.0.4-uiqa.20261029.2** 的固定包见 `test-artifacts/README.md`；下列旧版标签保留为历史发布。
+正式安装版本为 1.0.4；历史候选包和校验值仅作为验收归档，见 `test-artifacts/README.md`。
 
 适用环境：DeepSeek Harness **0.2.1-rc.3**，使用其标准模式和官方基础压缩引擎。
 
 在 DSH 中打开 **插件 → 添加插件**，粘贴固定版本来源并安装、启用：
 
 ```text
-github:Tests4gptplay/dsh-compaction-selector#v1.0.3
+github:Tests4gptplay/dsh-compaction-selector#v1.0.4
 ```
 
 Web 版：
 
 ```sh
-dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.3'
+dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.4'
 ```
 
-也可从 [Release](https://github.com/Tests4gptplay/dsh-compaction-selector/releases/tag/v1.0.3) 下载预打包 `.tgz`，在「添加插件」中填写安装包路径。使用本地文件安装时，选择 `.tgz` 包。
+也可从 [Release](https://github.com/Tests4gptplay/dsh-compaction-selector/releases/tag/v1.0.4) 下载预打包 `.tgz`，在「添加插件」中填写安装包路径。使用本地文件安装时，选择 `.tgz` 包。
 
 ## 使用
 
@@ -65,9 +65,9 @@ Host 服务保存模型选择与次数；压缩引擎继承 DSH 的 `BasicCompac
 
 [MIT](LICENSE)
 
-## 本地兼容性候选（未发布）
+## 兼容性与验收范围
 
-当前源树为固定 QA 候选，不是已发布版本；验证时使用对应本地 `.tgz`，上方公开链接仍指向上一正式版本。插件界面与宿主集成使用 DSH 提供的平台无关 API，不依赖特定系统路径或命令。Linux、Windows、macOS 必须分别在对应系统实际验证，Linux 结果不能代表另外两种系统通过。
+此正式版本保持已测候选运行代码不变；版本元数据、安装指引与发行说明已更新。插件界面与宿主集成使用 DSH 提供的平台无关 API，不依赖特定系统路径或命令。Linux、Windows、macOS 必须分别在对应系统实际验证，Linux 结果不能代表另外两种系统通过。
 
 ## 支持项目 / Support
 

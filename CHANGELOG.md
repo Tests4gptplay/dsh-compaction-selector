@@ -1,16 +1,13 @@
-# 1.0.4-uiqa.20261029.2 — unpublished local QA candidate
-
-- Respect provider failures returned inside a successful official model-catalog response. Show the existing localized load-failure/retry control instead of misleading empty-search copy; keep usable partial groups available.
-- Previous .1 native round is invalidated by this confirmed catalog-failure defect. All acceptance restarts from zero on .2. No engine, Prompt, credentials, host security or version-gate change.
-
-# 1.0.4-uiqa.20261029.1 — unpublished local QA candidate
-
-- Preserve typed counter input; reject invalid non-negative integers on save instead of silently transforming them.
-- Remove undocumented 999999 stepper clamp; preserve the existing safe-integer validation.
-- Prevent overlapping saves and translate status/search accessibility text in the active locale.
-- No prompt, installation-version gate, host security policy or provider credential changes.
-
 # 更新日志 / Changelog
+
+## 1.0.4（2026-10-30）
+
+- Show model-catalog provider failures with localized retry controls; retain healthy partial groups.
+- Preserve typed counter input and reject invalid values rather than silently transforming them; remove the undocumented stepper clamp while retaining safe-integer validation.
+- Prevent overlapping saves and refresh localized status/search labels.
+- Clarify that extra passes apply to automatic pressure compaction only; manual compaction attempts one useful pass.
+
+23 component/official-engine checks with DSH 0.2.1-rc.3 and the production package whitelist passed. Existing Linux synthetic automatic-loop/Stop evidence and Windows installation/settings/manual-compaction/continued-chat evidence are adopted. Natural automatic-pressure compaction was not triggered on Windows; no paid artificial load was generated. This is a documented coverage boundary, not a claim that all platforms or failure paths passed. Runtime is unchanged from the tested candidate.
 
 ## 1.0.3
 
