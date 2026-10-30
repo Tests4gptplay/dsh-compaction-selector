@@ -29,7 +29,7 @@ jobs:
         id: version
         run: |
           VERSION=$(node -p 'require("./package.json").version')
-          test "$VERSION" = "1.0.5"
+          test "$VERSION" = "1.0.6"
           test -f "docs/releases/v${VERSION}.md"
           echo "value=$VERSION" >> "$GITHUB_OUTPUT"
           npm pack --ignore-scripts
@@ -37,16 +37,16 @@ jobs:
         run: |
           mkdir -p /tmp/compaction-install-check
           cd /tmp/compaction-install-check
-          npm install --offline --ignore-scripts --legacy-peer-deps --no-audit --no-fund "$GITHUB_WORKSPACE/dsh-compaction-selector-1.0.5.tgz"
-          node -e 'const p=require("./node_modules/dsh-compaction-selector/package.json"); if(p.version!=="1.0.5" || !p.dsh.bundle)process.exit(1)'
+          npm install --offline --ignore-scripts --legacy-peer-deps --no-audit --no-fund "$GITHUB_WORKSPACE/dsh-compaction-selector-1.0.6.tgz"
+          node -e 'const p=require("./node_modules/dsh-compaction-selector/package.json"); if(p.version!=="1.0.6" || !p.dsh.bundle)process.exit(1)'
       - name: Publish new tag and release without overwriting history
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh release view v1.0.5 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+          if gh release view v1.0.6 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
             echo 'Release already exists; refusing overwrite'; exit 1
           fi
-          if git ls-remote --exit-code --tags origin refs/tags/v1.0.5 >/dev/null 2>&1; then
+          if git ls-remote --exit-code --tags origin refs/tags/v1.0.6 >/dev/null 2>&1; then
             echo 'Tag already exists; refusing overwrite'; exit 1
           fi
-          gh release create v1.0.5 dsh-compaction-selector-1.0.5.tgz --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title 'Compaction Selector v1.0.5' --latest --notes-file docs/releases/v1.0.5.md
+          gh release create v1.0.6 dsh-compaction-selector-1.0.6.tgz --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --title 'Compaction Selector v1.0.6' --latest --notes-file docs/releases/v1.0.6.md

@@ -1,6 +1,6 @@
 # Compaction Selector
 
-> **1.0.5** · [Changelog](CHANGELOG.md) · [Acceptance and scope](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/e9e09efd815e0f6a357c500c66b04f1b5f418cf3/docs/testing/ACCEPTANCE.md).
+> **1.0.6** · [Changelog](CHANGELOG.md) · [Acceptance and scope](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/e9e09efd815e0f6a357c500c66b04f1b5f418cf3/docs/testing/ACCEPTANCE.md).
 
 
 ## Summary model and compaction passes
@@ -9,7 +9,7 @@ Choose an independent summary model or Auto to follow the conversation route. Co
 
 [中文说明](README.md)
 
-Adds **Settings → Compaction model selection** to DeepSeek Harness, with an independent summarization model and configurable additional automatic pressure-compaction passes for Standard mode.
+Adds **Settings → Compaction Selector** to DeepSeek Harness, with an independent summarization model and configurable additional automatic pressure-compaction passes for Standard mode.
 
 ## Features
 
@@ -21,27 +21,27 @@ Adds **Settings → Compaction model selection** to DeepSeek Harness, with an in
 
 ## Install
 
-Current version: **1.0.5**. Follow the steps below for a first installation; an upgrade does not require uninstalling the existing plugin.
+Current version: **1.0.6**. Follow the steps below for a first installation; an upgrade does not require uninstalling the existing plugin.
 
 Verified host version: **DeepSeek Harness 0.2.1-rc.3**. Use Standard mode with the official compaction capability.
 
 Open **Plugins → Add plugin**, paste the pinned source, then install and enable:
 
 ```text
-github:Tests4gptplay/dsh-compaction-selector#v1.0.5
+github:Tests4gptplay/dsh-compaction-selector#v1.0.6
 ```
 
 For the Web profile:
 
 ```sh
-dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.5'
+dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.6'
 ```
 
-A packaged `.tgz` is also available in the [release](https://github.com/Tests4gptplay/dsh-compaction-selector/releases/tag/v1.0.5). For a local installation, enter the `.tgz` path in Add plugin.
+A packaged `.tgz` is also available in the [release](https://github.com/Tests4gptplay/dsh-compaction-selector/releases/tag/v1.0.6). For a local installation, enter the `.tgz` path in Add plugin.
 
 ## Use
 
-Open **Settings → Compaction model selection**, choose Auto or a specific model, and set the non-negative number of additional passes. Changes are saved automatically for the next compaction.
+Open **Settings → Compaction Selector**, choose Auto or a specific model, and set the non-negative number of additional passes. Changes are saved automatically for the next compaction.
 
 The bundle integrates with **Standard mode**. Existing DSH sessions retain their original preset revision; create a new Standard-mode session after installation to use the updated engine configuration. Follow DSH's restart prompt after initial activation or replacing plugin code.
 
@@ -57,7 +57,7 @@ Use a new Standard-mode session after installation so the summary-model and extr
 
 ## Compatibility and acceptance scope
 
-This update repairs documentation links in the installation package; plugin behavior is unchanged from the previous release.
+This update names both the settings entry and page “Compaction Selector”; model selection, automatic extra-pass settings and manual compaction behavior are unchanged.
 
 Linux, Windows and macOS native behavior must each be validated on that OS; a Linux result does not certify Windows or macOS.
 

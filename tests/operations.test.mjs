@@ -7,7 +7,7 @@ async function start(config){const p=await loadClient(config);p.render();await t
 async function open(p){node(p,'dcs-trigger').props.onClick();p.render();await tick();return p}
 
 test('English and Chinese initial UI, metadata label and readonly status',async()=>{
- for(const [language,title,readonly] of [['en','Compaction model selection','read-only'],['zh','压缩用模型选择','只读']]){
+ for(const [language,title,readonly] of [['en','Compaction Selector','read-only'],['zh','压缩选择器','只读']]){
   const p=await start({language,writable:false});assert.match(text(p.render()),new RegExp(title));assert.equal(p.slot.options.label(),title)
   assert.match(text(p.render()),new RegExp(readonly));assert.equal(node(p,'dcs-count').props.disabled,true);assert.equal(node(p,'dcs-trigger').props.disabled,true)
  }

@@ -1,5 +1,11 @@
 # 更新日志 / Changelog
 
+## 1.0.6（2026-10-30）
+
+- 设置入口与页面标题统一为“压缩选择器” / “Compaction Selector”，与插件名称一致。
+- 仅修改显示名称和使用说明；摘要模型选择、自动压缩额外次数、手动压缩及现有设置均不变。
+- Rename the settings entry and page to “Compaction Selector”; compaction behavior and saved preferences are unchanged.
+
 ## 1.0.5（2026-10-30）
 
 修复安装包内的发行说明、验收记录和支持页面链接；现在解压安装包后也可正确打开。运行功能、设置和既有数据处理方式不变。

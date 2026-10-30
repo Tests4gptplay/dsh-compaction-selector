@@ -1,6 +1,6 @@
 {
   "name": "dsh-compaction-selector",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "description": "为标准模式选择摘要模型，按供应商浏览搜索或用 Auto 跟随对话模型；保存自动压力压缩额外次数，手动压缩只尝试一次有用压缩。",
   "license": "MIT",

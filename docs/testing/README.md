@@ -1,4 +1,4 @@
-> Release 1.0.5 preserves the previously verified runtime. Versions and checksums below identify historical acceptance evidence. See [current release notes](../releases/v1.0.5.md).
+> Release 1.0.6 only changes the settings/page display names; previously verified compaction behavior is unchanged. Versions and checksums below identify historical acceptance evidence. See [current release notes](../releases/v1.0.6.md).
 
 # 候选测试文档
 

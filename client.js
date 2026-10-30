@@ -7,7 +7,7 @@ window.__ModuleLoader__.load({
     const NS = 'compaction.selector'
     const NAMESPACE = 'compaction-selector'
     const zh = {
-      title: '压缩用模型选择',
+      title: '压缩选择器',
       model: '1. 选择模型',
       passes: '2. 自动压缩额外次数',
       auto: 'Auto',
@@ -29,7 +29,7 @@ window.__ModuleLoader__.load({
       clear: '清除搜索',
     }
     const en = {
-      title: 'Compaction model selection',
+      title: 'Compaction Selector',
       model: '1. Select model',
       passes: '2. Extra automatic passes',
       auto: 'Auto',
