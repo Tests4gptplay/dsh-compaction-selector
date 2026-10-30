@@ -1,3 +1,5 @@
+> Test candidate: install the exact archive in [test-artifacts](test-artifacts/), not the older release links below. Windows native acceptance is pending.
+
 # 压缩选择器 · Compaction Selector
 
 为 DeepSeek Harness 添加「设置 → 压缩用模型选择」，集中管理标准模式的摘要模型和额外按需压缩次数。
@@ -55,6 +57,10 @@ Host 服务保存模型选择与次数；压缩引擎继承 DSH 的 `BasicCompac
 ## 许可
 
 [MIT](LICENSE)
+
+## 本地兼容性候选（未发布）
+
+当前源树为固定 QA 候选，不是已发布版本；验证时使用对应本地 `.tgz`，上方公开链接仍指向上一正式版本。插件界面与宿主集成使用 DSH 提供的平台无关 API，不依赖特定系统路径或命令。Linux、Windows、macOS 必须分别在对应系统实际验证，Linux 结果不能代表另外两种系统通过。
 
 ## 支持项目 / Support
 

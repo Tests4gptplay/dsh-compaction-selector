@@ -1,3 +1,5 @@
+> Test candidate: install the exact archive in [test-artifacts](test-artifacts/), not the older release links below. Windows native acceptance is pending.
+
 # Compaction Selector
 
 [中文说明](README.md)
@@ -45,6 +47,12 @@ A Host service provides live preferences to a subclass of the official `BasicCom
 The bundle declares the Standard preset and substitutes its basic compaction engine. JavaScript runtime files are shipped directly, with no installation build step. DSH supplies the official Host dependencies.
 
 [Changelog](CHANGELOG.md) · [Issues](https://github.com/Tests4gptplay/dsh-compaction-selector/issues) · [MIT license](LICENSE)
+
+## Local compatibility candidate (unpublished)
+
+This source tree is a pinned QA candidate, not a published release. Install its exact local `.tgz` for validation; the public links above still identify the previous release.
+
+The plugin UI and host integration use DSH-provided, OS-neutral APIs rather than OS paths or commands. Linux, Windows and macOS native behavior must each be validated on that OS; a Linux result does not certify Windows or macOS.
 
 ## 支持项目 / Support
 

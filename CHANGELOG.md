@@ -1,3 +1,15 @@
+# 1.0.4-uiqa.20261029.2 — unpublished local QA candidate
+
+- Respect provider failures returned inside a successful official model-catalog response. Show the existing localized load-failure/retry control instead of misleading empty-search copy; keep usable partial groups available.
+- Previous .1 native round is invalidated by this confirmed catalog-failure defect. All acceptance restarts from zero on .2. No engine, Prompt, credentials, host security or version-gate change.
+
+# 1.0.4-uiqa.20261029.1 — unpublished local QA candidate
+
+- Preserve typed counter input; reject invalid non-negative integers on save instead of silently transforming them.
+- Remove undocumented 999999 stepper clamp; preserve the existing safe-integer validation.
+- Prevent overlapping saves and translate status/search accessibility text in the active locale.
+- No prompt, installation-version gate, host security policy or provider credential changes.
+
 # 更新日志 / Changelog
 
 ## 1.0.3
