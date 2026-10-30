@@ -19,25 +19,33 @@ Adds **Settings → Compaction Selector** to DeepSeek Harness, with an independe
 - Settings are saved through DSH and read by the next compaction.
 - Chinese and English UI, theme-aware styling, keyboard selection and stepper controls.
 
-## Install
+## Install or update
 
-Current version: **1.0.6**. Follow the steps below for a first installation; an upgrade does not require uninstalling the existing plugin.
+Current version: **1.0.6**. The fixed tag and installation package include runtime files; no build is needed.
 
-Verified host version: **DeepSeek Harness 0.2.1-rc.3**. Use Standard mode with the official compaction capability.
-
-Open **Plugins → Add plugin**, paste the pinned source, then install and enable:
+**First installation (Desktop):** Open **Plugins → Add plugin** in the sidebar (or **Install a third-party plugin** in the arrow menu). Paste the complete line below into **Package name or address**, click **Install**, check the version and click **Enable now**.
 
 ```text
 github:Tests4gptplay/dsh-compaction-selector#v1.0.6
 ```
 
-For the Web profile:
+**Updating:** Use the same dialog with the new versioned source above, verify the installed version and enable it. Retain existing settings and user files. If DSH reports that it is already installed or requires removal first, follow that message to remove only the plugin entry and install the new version; do not clear DSH data or manually delete plugin directories. Restart only when DSH asks you to; fully quit and reopen it, including the Desktop tray process.
+
+After enabling, create a new **Standard-mode session** to use the selector. Existing sessions retain their original preset revision.
+
+**Alternative package:** Paste this `.tgz` URL into the same **Package name or address** field, or download it and enter its full absolute path. No extraction is needed. The path must be on the computer running DSH.
+
+```text
+https://github.com/Tests4gptplay/dsh-compaction-selector/releases/download/v1.0.6/dsh-compaction-selector-1.0.6.tgz
+```
+
+**Web:** Run this on the computer hosting the service. Stop the corresponding Web profile before updating and restart it after success. Web and Desktop installations are separate.
 
 ```sh
 dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.6'
 ```
 
-A packaged `.tgz` is also available in the [release](https://github.com/Tests4gptplay/dsh-compaction-selector/releases/tag/v1.0.6). For a local installation, enter the `.tgz` path in Add plugin.
+Alternatively, replace the source in the command with the `.tgz` URL above or the downloaded file's absolute path.
 
 ## Use
 

@@ -19,25 +19,33 @@
 - **即时保存**：通过 DSH 设置系统保存选择，供下一次压缩读取。
 - **中英文界面**：适配 DSH 主题，支持键盘选择和次数增减按钮。
 
-## 安装
+## 安装与升级
 
-当前版本为 **1.0.6**。首次安装请按下方步骤操作；升级前无需卸载现有插件。
+当前版本：**1.0.6**。安装包与固定标签均已包含运行文件，无需编译。
 
-已验证宿主版本：DeepSeek Harness **0.2.1-rc.3**。本插件用于提供官方压缩能力的标准模式。
-
-在 DSH 中打开 **插件 → 添加插件**，粘贴固定版本来源并安装、启用：
+**首次安装（Desktop）：** 打开侧栏 **插件 → 添加插件**（箭头菜单的 **安装第三方插件** 也可进入），把下面一整行填入 **包名或地址**，点击 **安装**，核对版本后点击 **立即启用**。
 
 ```text
 github:Tests4gptplay/dsh-compaction-selector#v1.0.6
 ```
 
-Web 版：
+**升级已有插件：** 同样填写上面的新版来源，成功后核对版本并启用；已有设置与用户文件保留。若宿主提示已安装或要求先卸载，再按提示仅卸载该插件条目并安装新版，不清除 DSH 数据或手工删除插件目录。是否需要重启以 DSH 提示为准；需要时完全退出并重新打开（Desktop 包括托盘）。
+
+启用后新建**标准模式会话**再使用压缩选择器；已有会话仍保留创建时的预设。
+
+**备用安装包：** 将下面的 `.tgz` 直链填入同一个 **包名或地址**；也可下载后填写文件的完整绝对路径，无需解压。该路径应属于运行 DSH 的电脑。
+
+```text
+https://github.com/Tests4gptplay/dsh-compaction-selector/releases/download/v1.0.6/dsh-compaction-selector-1.0.6.tgz
+```
+
+**Web：** 在运行服务的环境中执行。升级前停止对应 Web profile，成功后重新启动；Web 与 Desktop 分别安装。
 
 ```sh
 dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.6'
 ```
 
-也可从 [Release](https://github.com/Tests4gptplay/dsh-compaction-selector/releases/tag/v1.0.6) 下载预打包 `.tgz`，在「添加插件」中填写安装包路径。使用本地文件安装时，选择 `.tgz` 包。
+备用时将命令中的来源换成上面的 `.tgz` 直链或下载文件的完整绝对路径。
 
 ## 使用
 
