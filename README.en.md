@@ -1,6 +1,6 @@
 # Compaction Selector
 
-> **1.0.4** · [Release notes](docs/releases/v1.0.4.md) · [Acceptance and scope](docs/testing/ACCEPTANCE.md).
+> **1.0.5** · [Changelog](CHANGELOG.md) · [Acceptance and scope](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/e9e09efd815e0f6a357c500c66b04f1b5f418cf3/docs/testing/ACCEPTANCE.md).
 
 
 ## Summary model and compaction passes
@@ -21,23 +21,23 @@ Adds **Settings → Compaction model selection** to DeepSeek Harness, with an in
 
 ## Install
 
-Install release 1.0.4. Historical candidate packages/checksums are retained only as acceptance archives in `test-artifacts/README.md`.
+Current version: **1.0.5**. Follow the steps below for a first installation; an upgrade does not require uninstalling the existing plugin.
 
-Target environment: **DeepSeek Harness 0.2.1-rc.3**, Standard mode and its official basic compaction engine.
+Verified host version: **DeepSeek Harness 0.2.1-rc.3**. Use Standard mode with the official compaction capability.
 
 Open **Plugins → Add plugin**, paste the pinned source, then install and enable:
 
 ```text
-github:Tests4gptplay/dsh-compaction-selector#v1.0.4
+github:Tests4gptplay/dsh-compaction-selector#v1.0.5
 ```
 
 For the Web profile:
 
 ```sh
-dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.4'
+dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.5'
 ```
 
-A packaged `.tgz` is also available in the [release](https://github.com/Tests4gptplay/dsh-compaction-selector/releases/tag/v1.0.4). For a local installation, enter the `.tgz` path in Add plugin.
+A packaged `.tgz` is also available in the [release](https://github.com/Tests4gptplay/dsh-compaction-selector/releases/tag/v1.0.5). For a local installation, enter the `.tgz` path in Add plugin.
 
 ## Use
 
@@ -47,23 +47,23 @@ The bundle integrates with **Standard mode**. Existing DSH sessions retain their
 
 When migrating from `@local/dsh-sol-compaction`, enable this plugin and disable the old bundle so that this settings page owns the model and pass count.
 
-## Implementation
+## Usage requirements and technical documentation
 
-A Host service provides live preferences to a subclass of the official `BasicCompactionEngine`: `summarizationProvider`, `summarizationModel`, and `compactionRetries`. Auto supplies an empty provider/model pair and uses the official conversation-target resolution.
+Use a new Standard-mode session after installation so the summary-model and extra-pass settings apply. Other modes are outside this settings page’s scope. Install the prebuilt package directly; no manual build is needed.
 
-The bundle declares the Standard preset and substitutes its basic compaction engine. JavaScript runtime files are shipped directly, with no installation build step. DSH supplies the official Host dependencies.
+[Developer documentation](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/e9e09efd815e0f6a357c500c66b04f1b5f418cf3/README.en.md#implementation) is maintained separately in the repository.
 
 [Changelog](CHANGELOG.md) · [Issues](https://github.com/Tests4gptplay/dsh-compaction-selector/issues) · [MIT license](LICENSE)
 
 ## Compatibility and acceptance scope
 
-This release preserves the tested candidate runtime; version metadata, installation guidance and release notes are updated.
+This update repairs documentation links in the installation package; plugin behavior is unchanged from the previous release.
 
-The plugin UI and host integration use DSH-provided, OS-neutral APIs rather than OS paths or commands. Linux, Windows and macOS native behavior must each be validated on that OS; a Linux result does not certify Windows or macOS.
+Linux, Windows and macOS native behavior must each be validated on that OS; a Linux result does not certify Windows or macOS.
 
 ## 支持项目 / Support
 
-[GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [Patreon](https://www.patreon.com/cw/Kou848) · [爱发电 / Afdian](https://afdian.com/a/kkt_ifd1) · [支付宝 / Alipay](SPONSOR.md)
+[GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [Patreon](https://www.patreon.com/cw/Kou848) · [爱发电 / Afdian](https://afdian.com/a/kkt_ifd1) · [支付宝 / Alipay](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/e9e09efd815e0f6a357c500c66b04f1b5f418cf3/SPONSOR.md)
 
 
-Windows手动压缩及续聊已采用有效报告；自然压力自动摘要列入实机验证要求，见[验收](docs/testing/ACCEPTANCE.md)。
+Windows checks cover installation, saved settings, manual compaction and continued chat. Naturally triggered automatic pressure compaction has not yet been observed on Windows; that coverage limit does not change what the extra-pass setting does.

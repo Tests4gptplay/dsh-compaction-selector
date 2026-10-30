@@ -1,6 +1,6 @@
 # 压缩选择器 · Compaction Selector
 
-> **1.0.4** · [发行说明](docs/releases/v1.0.4.md) · [验收与范围](docs/testing/ACCEPTANCE.md)。
+> **1.0.5** · [更新记录](CHANGELOG.md) · [验收与范围](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/e9e09efd815e0f6a357c500c66b04f1b5f418cf3/docs/testing/ACCEPTANCE.md)。
 
 
 ## 模型与压缩次数
@@ -21,23 +21,23 @@
 
 ## 安装
 
-正式安装版本为 1.0.4；历史候选包和校验值仅作为验收归档，见 `test-artifacts/README.md`。
+当前版本为 **1.0.5**。首次安装请按下方步骤操作；升级前无需卸载现有插件。
 
-适用环境：DeepSeek Harness **0.2.1-rc.3**，使用其标准模式和官方基础压缩引擎。
+已验证宿主版本：DeepSeek Harness **0.2.1-rc.3**。本插件用于提供官方压缩能力的标准模式。
 
 在 DSH 中打开 **插件 → 添加插件**，粘贴固定版本来源并安装、启用：
 
 ```text
-github:Tests4gptplay/dsh-compaction-selector#v1.0.4
+github:Tests4gptplay/dsh-compaction-selector#v1.0.5
 ```
 
 Web 版：
 
 ```sh
-dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.4'
+dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.5'
 ```
 
-也可从 [Release](https://github.com/Tests4gptplay/dsh-compaction-selector/releases/tag/v1.0.4) 下载预打包 `.tgz`，在「添加插件」中填写安装包路径。使用本地文件安装时，选择 `.tgz` 包。
+也可从 [Release](https://github.com/Tests4gptplay/dsh-compaction-selector/releases/tag/v1.0.5) 下载预打包 `.tgz`，在「添加插件」中填写安装包路径。使用本地文件安装时，选择 `.tgz` 包。
 
 ## 使用
 
@@ -50,11 +50,11 @@ dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.
 
 从旧的 `@local/dsh-sol-compaction` 配置包迁移时，启用本插件后停用旧包，将压缩模型和次数统一放在本插件中管理。
 
-## 工作方式
+## 使用条件与技术资料
 
-Host 服务保存模型选择与次数；压缩引擎继承 DSH 的 `BasicCompactionEngine`，动态读取这三个设置：`summarizationProvider`、`summarizationModel`、`compactionRetries`。Auto 对应空的 provider/model，沿用官方的对话模型解析逻辑。
+本插件用于 DSH 标准模式。安装后新建标准模式会话，使模型选择和额外次数设置生效；其他模式不在本插件的设置范围内。普通用户直接安装预打包文件即可，无需编译。
 
-配置包包含标准预设声明，并将其中的基础压缩引擎替换为本插件引擎。源码直接使用 JavaScript，安装时无需编译。官方 Host 依赖由 DSH 运行环境提供。
+[开发者技术说明](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/e9e09efd815e0f6a357c500c66b04f1b5f418cf3/README.md#工作方式)单独保存在仓库中。
 
 ## 版本与反馈
 
@@ -67,14 +67,14 @@ Host 服务保存模型选择与次数；压缩引擎继承 DSH 的 `BasicCompac
 
 ## 兼容性与验收范围
 
-此正式版本保持已测候选运行代码不变；版本元数据、安装指引与发行说明已更新。插件界面与宿主集成使用 DSH 提供的平台无关 API，不依赖特定系统路径或命令。Linux、Windows、macOS 必须分别在对应系统实际验证，Linux 结果不能代表另外两种系统通过。
+本次更新修正安装包中的文档链接，插件功能与上一版本一致。Linux、Windows、macOS 必须分别在对应系统实际验证，Linux 结果不能代表另外两种系统通过。
 
 ## 支持项目 / Support
 
-[GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [Patreon](https://www.patreon.com/cw/Kou848) · [爱发电 / Afdian](https://afdian.com/a/kkt_ifd1) · [支付宝 / Alipay](SPONSOR.md)
+[GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [Patreon](https://www.patreon.com/cw/Kou848) · [爱发电 / Afdian](https://afdian.com/a/kkt_ifd1) · [支付宝 / Alipay](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/e9e09efd815e0f6a357c500c66b04f1b5f418cf3/SPONSOR.md)
 
 
-Windows手动压缩及续聊已采用有效报告；自然压力自动摘要列入实机验证要求，见[验收](docs/testing/ACCEPTANCE.md)。
+Windows 已验证安装、设置保存、手动压缩及随后续聊。自然压力触发的自动压缩尚未在 Windows 实测；这不影响额外次数的功能定义，也不代表该路径已通过实机验证。
 
 
-[查验具体用例、实际结果与公开净化证据](docs/testing/EVIDENCE.md)。
+[查验具体用例、实际结果与公开净化证据](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/e9e09efd815e0f6a357c500c66b04f1b5f418cf3/docs/testing/EVIDENCE.md)。

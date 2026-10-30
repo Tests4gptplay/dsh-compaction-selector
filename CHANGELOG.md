@@ -1,5 +1,11 @@
 # 更新日志 / Changelog
 
+## 1.0.5（2026-10-30）
+
+修复安装包内的发行说明、验收记录和支持页面链接；现在解压安装包后也可正确打开。运行功能、设置和既有数据处理方式不变。
+
+Repair release-note, acceptance and support links when reading the extracted installation package. Runtime behavior, settings and data handling are unchanged.
+
 ## 1.0.4（2026-10-30）
 
 - Show model-catalog provider failures with localized retry controls; retain healthy partial groups.

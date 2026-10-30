@@ -1,8 +1,8 @@
 {
   "name": "dsh-compaction-selector",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
-  "description": "选择摘要模型与自动压力压缩额外次数；Auto 跟随对话路由，手动压缩只尝试一次。",
+  "description": "为标准模式选择摘要模型，按供应商浏览搜索或用 Auto 跟随对话模型；保存自动压力压缩额外次数，手动压缩只尝试一次有用压缩。",
   "license": "MIT",
   "author": "Tests4gptplay",
   "homepage": "https://github.com/Tests4gptplay/dsh-compaction-selector",
