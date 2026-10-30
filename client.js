@@ -26,6 +26,7 @@ window.__ModuleLoader__.load({
       account: 'DeepSeek 账号',
       increase: '增加',
       decrease: '减少',
+      clear: '清除搜索',
     }
     const en = {
       title: 'Compaction model selection',
@@ -47,6 +48,7 @@ window.__ModuleLoader__.load({
       account: 'DeepSeek Account',
       increase: 'Increase',
       decrease: 'Decrease',
+      clear: 'Clear search',
     }
     const css = `
 .dcs-page{color:var(--dsw-alias-label-primary);padding:24px;max-width:760px;font-size:13px;line-height:1.5}
@@ -136,6 +138,7 @@ window.__ModuleLoader__.load({
       const search = useRef(null)
       const items = useRef([])
       const generation = useRef(0)
+      const saving = useRef(false)
       const id = React.useId()
       const writable = Boolean(snapshot.writable) && snapshot.status === 'ready'
       const unavailable = snapshot.status === 'unavailable'
@@ -158,7 +161,10 @@ window.__ModuleLoader__.load({
           const rank = g =>
             g.id === 'deepseek-account' ? 0 : g.id === 'deepseek-official' ? 1 : 2
           setGroups(list.slice().sort((a, b) => rank(a) - rank(b)))
-          setLoadState('ready')
+          // The official catalog isolates provider errors in a successful response.
+          // Keep usable groups visible, but do not mislabel failed providers as an empty search.
+          const failures = Array.isArray(r.value && r.value.failures) ? r.value.failures : []
+          setLoadState(failures.length ? 'error' : 'ready')
         } catch {
           if (gen === generation.current) setLoadState('error')
         }
@@ -202,25 +208,28 @@ window.__ModuleLoader__.load({
       const label = !current.provider ? t('auto') : (selected && selected.name) || current.model
 
       async function save(ops) {
+        if (saving.current) return false
+        saving.current = true
         setBusy(true)
         setMessage('')
         setError(false)
         try {
           const ok = await form.mutate(ops)
           setError(!ok)
-          setMessage(t(ok ? 'saved' : 'failed'))
+          setMessage(ok ? 'saved' : 'failed')
           return ok
         } catch {
           setError(true)
-          setMessage(t('failed'))
+          setMessage('failed')
           return false
         } finally {
+          saving.current = false
           setBusy(false)
         }
       }
 
       async function choose(selection) {
-        if (busy || !writable) return
+        if (busy || saving.current || !writable) return
         if (await save([{ op: 'set', path: ['selection'], value: selection }])) {
           setOpen(false)
           trigger.current?.focus()
@@ -228,10 +237,10 @@ window.__ModuleLoader__.load({
       }
 
       async function saveCount() {
-        if (!writable || busy) return
+        if (!writable || busy || saving.current) return
         if (!/^\d+$/.test(count) || !Number.isSafeInteger(Number(count))) {
           setError(true)
-          setMessage(t('invalid'))
+          setMessage('invalid')
           return
         }
         if (Number(count) !== (value && value.extraPasses)) {
@@ -240,9 +249,15 @@ window.__ModuleLoader__.load({
       }
 
       async function stepCount(delta) {
-        if (!writable || busy) return
-        const base = /^\d+$/.test(count) ? Number(count) : (value && value.extraPasses) || 0
-        const next = Math.max(0, Math.min(999999, base + delta))
+        if (!writable || busy || saving.current) return
+        const parsed = /^\d+$/.test(count) ? Number(count) : NaN
+        const base = Number.isSafeInteger(parsed) ? parsed : (value && value.extraPasses) || 0
+        const next = Math.max(0, base + delta)
+        if (!Number.isSafeInteger(next)) {
+          setError(true)
+          setMessage('invalid')
+          return
+        }
         setCount(String(next))
         if (next !== (value && value.extraPasses)) {
           await save([{ op: 'set', path: ['extraPasses'], value: next }])
@@ -374,7 +389,8 @@ window.__ModuleLoader__.load({
                       'button',
                       {
                         className: 'dcs-clear',
-                        'aria-label': 'Clear',
+                        'aria-label': t('clear'),
+                        type: 'button',
                         onClick: () => {
                           setQuery('')
                           setActive(0)
@@ -391,7 +407,7 @@ window.__ModuleLoader__.load({
                   ...visible.map(g =>
                     h(
                       'div',
-                      { key: g.id, role: 'group', 'aria-label': g.name },
+                      { key: g.id, role: 'group', 'aria-label': g.id === 'deepseek-account' ? t('account') : g.name },
                       h(
                         'div',
                         { className: 'dcs-provider' },
@@ -440,7 +456,11 @@ window.__ModuleLoader__.load({
               inputMode: 'numeric',
               value: count,
               disabled: !writable || busy,
-              onChange: e => setCount(e.target.value.replace(/[^\d]/g, '')),
+              onChange: e => {
+                setCount(e.target.value)
+                setMessage('')
+                setError(false)
+              },
               onBlur: saveCount,
               onKeyDown: e => {
                 if (e.key === 'Enter') {
@@ -485,7 +505,7 @@ window.__ModuleLoader__.load({
           h(
             'div',
             { role: error ? 'alert' : 'status', className: 'dcs-status' + (error ? ' dcs-error' : '') },
-            message,
+            t(message),
           ),
       )
     }

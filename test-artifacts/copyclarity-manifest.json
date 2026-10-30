@@ -1,0 +1,32 @@
+{
+  "plugin": "compaction",
+  "originalSHA256": "a88d493183f0c66b4d801cf3c0f04978125ebb7102088a9b47ab52c44b403850",
+  "newFile": "dsh-compaction-selector-1.0.4-uiqa.20261029.2-copyclarity.tgz",
+  "newSHA256": "1b9684bb492f966e6d8d66ab20a945b2d6291fd3b3439e7c4527e390e959a2f9",
+  "sizeBytes": 14279,
+  "version": "1.0.4-uiqa.20261029.2",
+  "changedFiles": [
+    "package/client.js",
+    "package/locale/en.json",
+    "package/package.json",
+    "package/locale/zh.json",
+    "package/README.en.md",
+    "package/README.md"
+  ],
+  "unchangedFiles": 6,
+  "qualification": "Documentation and display strings only. Original frozen artifact and acceptance identity unchanged. No new functional run or release. Compaction client differs only string literal values; original engine/index byte-identical.",
+  "files": {
+    "package/LICENSE": "a4c4241100b108ce611d06f7163e6f21cfe7d85180ddde5edf8b8a0c6268aadd",
+    "package/client.js": "7236afc85c25107557aaecd141083761c276eb2698e307eb26a68af6d8323557",
+    "package/engine.js": "5670fcc70b4d976a1895f233873c3eef9b05825cea5d8cc68c7574cbd31a14f5",
+    "package/index.js": "df3024ef5858f81aa007d45789c1a273b4a593d16339a5165e3142154a31ca77",
+    "package/locale/en.json": "d1079fba45012d8e2066dbfafdc98a04ee9dfee2e0a4baf574886f449b1e41c3",
+    "package/package.json": "fd95c05fd395e03b9cadc1bc99bc9314dce7cf947f503704fcec6be943e29cb6",
+    "package/locale/zh.json": "c70a8308346d8beae471b826b59eab259964c516695a19ae14c384a2b2b9de1d",
+    "package/CHANGELOG.md": "ada1b0aae6fc8fe72aeffd87aada1be3079ede7a62f8e7cdb3c3cc6c1580a47d",
+    "package/README.en.md": "c1f5ed366a9a3ee2fdca397a261066e904e34be2b1dc542771ebe7ee507831b2",
+    "package/README.md": "c29b1ec16e1f15441b1f69c04047be4c6947240b5f4db75ae919fa84facf0149",
+    "package/icon.svg": "6265db738b79b12e94683586d373a468bfb42acd8be192d596c79864a831ed5e",
+    "package/cordis.patch.yml": "3669d45b41ae518a2b79d1f7160c7ad9e78f7cc14fb696d281c5a2bc1e7b36e3"
+  }
+}

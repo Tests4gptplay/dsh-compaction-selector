@@ -1,6 +1,6 @@
 {
   "name": "dsh-compaction-selector",
-  "version": "1.0.3",
+  "version": "1.0.4-uiqa.20261029.2",
   "type": "module",
   "description": "选择摘要模型与自动压力压缩额外次数；Auto 跟随对话路由，手动压缩只尝试一次。",
   "license": "MIT",
@@ -50,5 +50,9 @@
         "@deepseek-ai/dsh-client-locale"
       ]
     }
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "pack:check": "node scripts/verify-pack.mjs"
   }
 }

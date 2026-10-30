@@ -1,0 +1,70 @@
+{
+  "plugin": "dsh-compaction-selector",
+  "version": "1.0.4-uiqa.20261029.2",
+  "status": "test candidate; not a formal release; Windows native acceptance pending",
+  "artifact": "dsh-compaction-selector-1.0.4-uiqa.20261029.2.tgz",
+  "bytes": 13749,
+  "sha256": "a88d493183f0c66b4d801cf3c0f04978125ebb7102088a9b47ab52c44b403850",
+  "packageFiles": [
+    {
+      "path": "LICENSE",
+      "bytes": 1070,
+      "sha256": "a4c4241100b108ce611d06f7163e6f21cfe7d85180ddde5edf8b8a0c6268aadd"
+    },
+    {
+      "path": "client.js",
+      "bytes": 21073,
+      "sha256": "5e96c6a974241914de264bcd469758a7ff10e332eb9624092624b591a765ace2"
+    },
+    {
+      "path": "engine.js",
+      "bytes": 689,
+      "sha256": "5670fcc70b4d976a1895f233873c3eef9b05825cea5d8cc68c7574cbd31a14f5"
+    },
+    {
+      "path": "index.js",
+      "bytes": 1439,
+      "sha256": "df3024ef5858f81aa007d45789c1a273b4a593d16339a5165e3142154a31ca77"
+    },
+    {
+      "path": "locale/en.json",
+      "bytes": 175,
+      "sha256": "995ff976565164e5f0764c137d1bf0be8236ecaa9ea21bbd627410229487c0aa"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1452,
+      "sha256": "c582418594190fad312f2eae485329ba89762a14d765c71399d6373968f391f4"
+    },
+    {
+      "path": "locale/zh.json",
+      "bytes": 154,
+      "sha256": "d949e8fcd6a62f8d49810f535783272d5bd6f4d02ed25ca38ef85e664cef0868"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1499,
+      "sha256": "ada1b0aae6fc8fe72aeffd87aada1be3079ede7a62f8e7cdb3c3cc6c1580a47d"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 2946,
+      "sha256": "cebf49a9d9f4089b571430b7d3d5d3c3e8d2bef45fcb1501061aecad11ec4d7d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3079,
+      "sha256": "5e3ead742ebe01254aa037923d80826dc5c8b47afac6d963d92ea117e89bae50"
+    },
+    {
+      "path": "icon.svg",
+      "bytes": 314,
+      "sha256": "6265db738b79b12e94683586d373a468bfb42acd8be192d596c79864a831ed5e"
+    },
+    {
+      "path": "cordis.patch.yml",
+      "bytes": 6522,
+      "sha256": "3669d45b41ae518a2b79d1f7160c7ad9e78f7cc14fb696d281c5a2bc1e7b36e3"
+    }
+  ]
+}

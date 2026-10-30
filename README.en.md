@@ -1,5 +1,12 @@
 # Compaction Selector
 
+> Candidate branch: [Install](test-artifacts/INSTALL.md) · [Acceptance](docs/testing/ACCEPTANCE.md) · [Changes](docs/testing/CHANGES.md) · [Index](docs/testing/README.md). Package identity is unchanged by this documentation update.
+
+
+## Summary model and compaction passes
+
+Choose an independent summary model or Auto to follow the conversation route. Configure extra passes for automatic pressure compaction; manual `/compact` attempts one useful compaction. Auto prefers the latest request route and falls back to the Agent model through the official engine.
+
 [中文说明](README.md)
 
 Adds **Settings → Compaction model selection** to DeepSeek Harness, with an independent summarization model and configurable additional automatic pressure-compaction passes for Standard mode.
@@ -8,11 +15,13 @@ Adds **Settings → Compaction model selection** to DeepSeek Harness, with an in
 
 - Browse and search the models configured in DSH, grouped by provider.
 - **Auto**, at the top of the picker, follows the current conversation model route.
-- Extra automatic pressure-compaction passes default to **1**. Values 0 / 1 / 3 allow at most 1 / 2 / 4 total passes per automatic trigger, stopping early once below the threshold. Manual `/compact` attempts one useful compaction.
+- Additional automatic pressure-compaction passes default to **1**. Values **0 / 1 / 3** allow at most **1 / 2 / 4** passes per automatic trigger, continuing only while above the threshold and a useful range remains. Manual `/compact` attempts one useful compaction and does not repeat according to this setting.
 - Settings are saved through DSH and read by the next compaction.
 - Chinese and English UI, theme-aware styling, keyboard selection and stepper controls.
 
 ## Install
+
+For test candidate **1.0.4-uiqa.20261029.2**, use the pinned package in `test-artifacts/README.md`; older tags below are historical releases.
 
 Target environment: **DeepSeek Harness 0.2.1-rc.3**, Standard mode and its official basic compaction engine.
 
@@ -46,6 +55,15 @@ The bundle declares the Standard preset and substitutes its basic compaction eng
 
 [Changelog](CHANGELOG.md) · [Issues](https://github.com/Tests4gptplay/dsh-compaction-selector/issues) · [MIT license](LICENSE)
 
+## Local compatibility candidate (unpublished)
+
+This source tree is a pinned QA candidate, not a published release. Install its exact local `.tgz` for validation; the public links above still identify the previous release.
+
+The plugin UI and host integration use DSH-provided, OS-neutral APIs rather than OS paths or commands. Linux, Windows and macOS native behavior must each be validated on that OS; a Linux result does not certify Windows or macOS.
+
 ## 支持项目 / Support
 
 [GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [Patreon](https://www.patreon.com/cw/Kou848) · [爱发电 / Afdian](https://afdian.com/a/kkt_ifd1) · [支付宝 / Alipay](SPONSOR.md)
+
+
+Windows手动压缩及续聊已采用有效报告；自然压力自动摘要列入实机验证要求，见[验收](docs/testing/ACCEPTANCE.md)。

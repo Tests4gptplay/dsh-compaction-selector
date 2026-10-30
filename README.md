@@ -1,5 +1,12 @@
 # 压缩选择器 · Compaction Selector
 
+> 候选分支：[安装](test-artifacts/INSTALL.md) · [验收](docs/testing/ACCEPTANCE.md) · [变更](docs/testing/CHANGES.md) · [索引](docs/testing/README.md)。此次文档整理不更换包身份。
+
+
+## 模型与压缩次数
+
+选择独立摘要模型，或用 Auto 跟随对话路由。自动压力压缩可设置额外次数；手动 `/compact` 只尝试一次有用压缩。Auto 由官方引擎优先采用最近请求路由，缺少时回退 Agent 模型。
+
 为 DeepSeek Harness 添加「设置 → 压缩用模型选择」，集中管理标准模式的摘要模型和自动压缩额外次数。
 
 [English](README.en.md)
@@ -8,11 +15,13 @@
 
 - **独立选择压缩模型**：从 DSH 已配置的模型目录中按供应商浏览、搜索和选择。
 - **Auto 跟随对话**：模型列表顶部提供 Auto，压缩时使用当前对话的模型路由。
-- **自动压缩额外次数**：默认 **1**。仅在自动压力压缩后仍超过阈值时继续；0 / 1 / 3 对应每次自动触发最多 1 / 2 / 4 轮，达到阈值后提前结束。手动 `/compact` 只尝试一次有用压缩。
+- **自动压缩额外次数**：默认 **1**。仅在自动上下文压力压缩后仍超过阈值时继续；设 **0 / 1 / 3** 时，单次自动触发最多尝试 **1 / 2 / 4** 轮。达到阈值或没有可压缩范围时提前结束。手动 `/compact` 仅尝试一次有用压缩，不套用该额外次数。
 - **即时保存**：通过 DSH 设置系统保存选择，供下一次压缩读取。
 - **中英文界面**：适配 DSH 主题，支持键盘选择和次数增减按钮。
 
 ## 安装
+
+本分支测试候选 **1.0.4-uiqa.20261029.2** 的固定包见 `test-artifacts/README.md`；下列旧版标签保留为历史发布。
 
 适用环境：DeepSeek Harness **0.2.1-rc.3**，使用其标准模式和官方基础压缩引擎。
 
@@ -56,6 +65,16 @@ Host 服务保存模型选择与次数；压缩引擎继承 DSH 的 `BasicCompac
 
 [MIT](LICENSE)
 
+## 本地兼容性候选（未发布）
+
+当前源树为固定 QA 候选，不是已发布版本；验证时使用对应本地 `.tgz`，上方公开链接仍指向上一正式版本。插件界面与宿主集成使用 DSH 提供的平台无关 API，不依赖特定系统路径或命令。Linux、Windows、macOS 必须分别在对应系统实际验证，Linux 结果不能代表另外两种系统通过。
+
 ## 支持项目 / Support
 
 [GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [Patreon](https://www.patreon.com/cw/Kou848) · [爱发电 / Afdian](https://afdian.com/a/kkt_ifd1) · [支付宝 / Alipay](SPONSOR.md)
+
+
+Windows手动压缩及续聊已采用有效报告；自然压力自动摘要列入实机验证要求，见[验收](docs/testing/ACCEPTANCE.md)。
+
+
+[查验具体用例、实际结果与公开净化证据](docs/testing/EVIDENCE.md)。
