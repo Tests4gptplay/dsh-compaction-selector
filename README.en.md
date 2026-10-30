@@ -2,13 +2,13 @@
 
 [中文说明](README.md)
 
-Adds **Settings → Compaction model selection** to DeepSeek Harness, with an independent summarization model and configurable additional on-demand compaction passes for Standard mode.
+Adds **Settings → Compaction model selection** to DeepSeek Harness, with an independent summarization model and configurable additional automatic pressure-compaction passes for Standard mode.
 
 ## Features
 
 - Browse and search the models configured in DSH, grouped by provider.
 - **Auto**, at the top of the picker, follows the current conversation model route.
-- Additional compaction passes default to **1**. Set **0** for the initial pass only.
+- Extra automatic pressure-compaction passes default to **1**. Values 0 / 1 / 3 allow at most 1 / 2 / 4 total passes per automatic trigger, stopping early once below the threshold. Manual `/compact` attempts one useful compaction.
 - Settings are saved through DSH and read by the next compaction.
 - Chinese and English UI, theme-aware styling, keyboard selection and stepper controls.
 
