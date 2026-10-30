@@ -64,3 +64,6 @@ The plugin UI and host integration use DSH-provided, OS-neutral APIs rather than
 ## 支持项目 / Support
 
 [GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [Patreon](https://www.patreon.com/cw/Kou848) · [爱发电 / Afdian](https://afdian.com/a/kkt_ifd1) · [支付宝 / Alipay](SPONSOR.md)
+
+
+Windows手动压缩及续聊已采用有效报告；自然压力自动摘要列入实机验证要求，见[验收](docs/testing/ACCEPTANCE.md)。
