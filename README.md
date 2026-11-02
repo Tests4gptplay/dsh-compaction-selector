@@ -79,7 +79,7 @@ dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.
 
 ## 支持项目 / Support
 
-[GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [Patreon](https://www.patreon.com/cw/Kou848) · [爱发电 / Afdian](https://afdian.com/a/kkt_ifd1) · [支付宝 / Alipay](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/e9e09efd815e0f6a357c500c66b04f1b5f418cf3/SPONSOR.md)
+[GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [支付宝 / Alipay](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/main/SPONSOR.md)
 
 
 Windows 已验证安装、设置保存、手动压缩及随后续聊。自然压力触发的自动压缩尚未在 Windows 实测；这不影响额外次数的功能定义，也不代表该路径已通过实机验证。

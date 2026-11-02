@@ -71,7 +71,7 @@ Linux, Windows and macOS native behavior must each be validated on that OS; a Li
 
 ## 支持项目 / Support
 
-[GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [Patreon](https://www.patreon.com/cw/Kou848) · [爱发电 / Afdian](https://afdian.com/a/kkt_ifd1) · [支付宝 / Alipay](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/e9e09efd815e0f6a357c500c66b04f1b5f418cf3/SPONSOR.md)
+[GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [支付宝 / Alipay](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/main/SPONSOR.md)
 
 
 Windows checks cover installation, saved settings, manual compaction and continued chat. Naturally triggered automatic pressure compaction has not yet been observed on Windows; that coverage limit does not change what the extra-pass setting does.
