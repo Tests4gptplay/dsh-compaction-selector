@@ -4,7 +4,7 @@ import {readFile} from 'node:fs/promises'
 import {fileURLToPath} from 'node:url'
 const root=fileURLToPath(new URL('..',import.meta.url))
 const manifest=JSON.parse(await readFile(new URL('../package.json',import.meta.url),'utf8'))
-const expected=['CHANGELOG.md','LICENSE','README.en.md','README.md','client.js','cordis.patch.yml','engine.js','icon.svg','index.js','locale/en.json','locale/zh.json','package.json'].sort()
+const expected=['LICENSE','README.en.md','README.md','client.js','cordis.patch.yml','engine.js','icon.svg','index.js','locale/en.json','locale/zh.json','package.json'].sort()
 const proc=spawnSync(process.platform==='win32'?'npm.cmd':'npm',['pack','--dry-run','--ignore-scripts','--json'],{cwd:root,encoding:'utf8',shell:process.platform==='win32'})
 if(proc.error)throw proc.error
 assert.equal(proc.status,0,proc.stderr)

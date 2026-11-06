@@ -1,88 +1,35 @@
 # 压缩选择器 · Compaction Selector
 
-> **1.0.6** · [更新记录](CHANGELOG.md) · [验收与范围](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/e9e09efd815e0f6a357c500c66b04f1b5f418cf3/docs/testing/ACCEPTANCE.md)。
+为 DeepSeek Harness 的标准模式选择压缩摘要模型，并设置自动压缩的额外次数。
 
+## 安装
 
-## 模型与压缩次数
-
-选择独立摘要模型，或用 Auto 跟随对话路由。自动压力压缩可设置额外次数；手动 `/compact` 只尝试一次有用压缩。Auto 由官方引擎优先采用最近请求路由，缺少时回退 Agent 模型。
-
-为 DeepSeek Harness 添加「设置 → 压缩选择器」，集中管理标准模式的摘要模型和自动压缩额外次数。
-
-[English](README.en.md)
-
-## 功能
-
-- **独立选择压缩模型**：从 DSH 已配置的模型目录中按供应商浏览、搜索和选择。
-- **Auto 跟随对话**：模型列表顶部提供 Auto，压缩时使用当前对话的模型路由。
-- **自动压缩额外次数**：默认 **1**。仅在自动上下文压力压缩后仍超过阈值时继续；设 **0 / 1 / 3** 时，单次自动触发最多尝试 **1 / 2 / 4** 轮。达到阈值或没有可压缩范围时提前结束。手动 `/compact` 仅尝试一次有用压缩，不套用该额外次数。
-- **即时保存**：通过 DSH 设置系统保存选择，供下一次压缩读取。
-- **中英文界面**：适配 DSH 主题，支持键盘选择和次数增减按钮。
-
-## 安装与升级
-
-当前版本：**1.0.6**。安装包与固定标签均已包含运行文件，无需编译。
-
-**首次安装（Desktop）：** 打开侧栏 **插件 → 添加插件**（箭头菜单的 **安装第三方插件** 也可进入），把下面一整行填入 **包名或地址**，点击 **安装**，核对版本后点击 **立即启用**。
+在 DeepSeek Harness 的「插件 → 添加插件」中，将以下来源填入「包名或地址」，安装并启用：
 
 ```text
-github:Tests4gptplay/dsh-compaction-selector#v1.0.6
+github:Tests4gptplay/dsh-compaction-selector#v1.0.7
 ```
 
-**升级已有插件：** 同样填写上面的新版来源，成功后核对版本并启用；已有设置与用户文件保留。若宿主提示已安装或要求先卸载，再按提示仅卸载该插件条目并安装新版，不清除 DSH 数据或手工删除插件目录。是否需要重启以 DSH 提示为准；需要时完全退出并重新打开（Desktop 包括托盘）。
-
-启用后新建**标准模式会话**再使用压缩选择器；已有会话仍保留创建时的预设。
-
-**备用安装包：** 将下面的 `.tgz` 直链填入同一个 **包名或地址**；也可下载后填写文件的完整绝对路径，无需解压。该路径应属于运行 DSH 的电脑。
+也可安装预打包文件，无需解压或编译：
 
 ```text
-https://github.com/Tests4gptplay/dsh-compaction-selector/releases/download/v1.0.6/dsh-compaction-selector-1.0.6.tgz
+https://github.com/Tests4gptplay/dsh-compaction-selector/releases/download/v1.0.7/dsh-compaction-selector-1.0.7.tgz
 ```
 
-**Web：** 在运行服务的环境中执行。升级前停止对应 Web profile，成功后重新启动；Web 与 Desktop 分别安装。
-
-```sh
-dsh plugin --profile web add 'github:Tests4gptplay/dsh-compaction-selector#v1.0.6'
-```
-
-备用时将命令中的来源换成上面的 `.tgz` 直链或下载文件的完整绝对路径。
+如下载到本地，将安装包的完整绝对路径填入同一个输入框即可。该文件应位于运行 DSH 的电脑上。
 
 ## 使用
 
-1. 打开 **设置 → 压缩选择器**。
-2. 在「1. 选择模型」中选择 **Auto** 或具体模型。
-3. 在「2. 自动压缩额外次数」中填写非负整数，或使用增减按钮。
-4. 设置自动保存，下次压缩读取最新值。
+1. 在「设置 → 压缩选择器」中选择 Auto，或选择独立的摘要模型。
+2. 按需设置自动压缩的额外次数，设置会自动保存。
+3. 启用后新建标准模式会话；已有会话保留创建时的预设。
 
-插件通过配置包接入**标准模式**。DSH 已有会话保留创建时的预设版本；安装后新建标准模式会话使用新的引擎配置。首次启用或替换插件代码后，按 DSH 提示重启以加载新模块。
+Auto 跟随对话模型。额外次数仅用于自动压力压缩，手动 `/compact` 只尝试一次有用压缩。
 
-从旧的 `@local/dsh-sol-compaction` 配置包迁移时，启用本插件后停用旧包，将压缩模型和次数统一放在本插件中管理。
+## 升级
 
-## 使用条件与技术资料
+通过插件市场提供的安装入口或上述新版来源更新并启用，保留现有设置和用户文件。
+如 DSH 提示必须先卸载，只移除插件条目，不清除 DSH 数据或手工删除插件目录。
+是否重启以 DSH 提示为准；需要时完全退出，包括托盘，再重新打开。
 
-本插件用于 DSH 标准模式。安装后新建标准模式会话，使模型选择和额外次数设置生效；其他模式不在本插件的设置范围内。普通用户直接安装预打包文件即可，无需编译。
-
-[开发者技术说明](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/e9e09efd815e0f6a357c500c66b04f1b5f418cf3/README.md#工作方式)单独保存在仓库中。
-
-## 版本与反馈
-
-- [更新日志](CHANGELOG.md)
-- [问题反馈](https://github.com/Tests4gptplay/dsh-compaction-selector/issues)
-
-## 许可
-
-[MIT](LICENSE)
-
-## 兼容性与验收范围
-
-本次更新将设置入口与页面名称统一为“压缩选择器”；模型选择、自动压缩次数及手动压缩行为不变。Linux、Windows、macOS 必须分别在对应系统实际验证，Linux 结果不能代表另外两种系统通过。
-
-## 支持项目 / Support
-
-[GitHub Sponsors](https://github.com/sponsors/Tests4gptplay) · [Ko-fi](https://ko-fi.com/kou392350) · [支付宝 / Alipay](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/main/SPONSOR.md)
-
-
-Windows 已验证安装、设置保存、手动压缩及随后续聊。自然压力触发的自动压缩尚未在 Windows 实测；这不影响额外次数的功能定义，也不代表该路径已通过实机验证。
-
-
-[查验具体用例、实际结果与公开净化证据](https://github.com/Tests4gptplay/dsh-compaction-selector/blob/e9e09efd815e0f6a357c500c66b04f1b5f418cf3/docs/testing/EVIDENCE.md)。
+[English](README.en.md)
