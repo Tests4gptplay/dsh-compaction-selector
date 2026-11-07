@@ -1,5 +1,5 @@
 window.__ModuleLoader__.load({
-  id: 'dsh-compaction-selector',
+  id: '@tests4gptplay/dsh-compaction-selector',
   factory(require) {
     const React = require('react')
     const h = React.createElement

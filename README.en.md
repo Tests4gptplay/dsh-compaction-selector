@@ -10,6 +10,8 @@ Open **Plugins → Add plugin** in DeepSeek Harness. Paste this source into **Pa
 github:Tests4gptplay/dsh-compaction-selector#v1.0.7
 ```
 
+**npm installation:** You can also enter `@tests4gptplay/dsh-compaction-selector@1.0.7` in **Package name or address**.
+
 Alternatively, use the prebuilt package. No extraction or build is required:
 
 ```text

@@ -10,6 +10,8 @@
 github:Tests4gptplay/dsh-compaction-selector#v1.0.7
 ```
 
+**npm 安装：** 也可在 **包名或地址** 中填入 `@tests4gptplay/dsh-compaction-selector@1.0.7`。
+
 也可安装预打包文件，无需解压或编译：
 
 ```text
